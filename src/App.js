@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Navbar";
+import ArtIndex from "./ArtIndex";
+import HaikuForm from "./HaikuForm";
+import Haiku from"./Haiku";
+import Artwork from "./Artwork";
+import 'fontsource-roboto'; 
+import "./Style.css";
+
+
+
+
+
+
 
 function App() {
+  
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Navbar />
+        <header >Artku Random Haiku</header>
+        <div></div>
+        <div></div>
+        <Artwork />
+        <div></div>
+        <div></div>
+        <HaikuForm />
+        <ArtIndex />
+       
     </div>
-  );
+ 
+   
+  )
 }
 
 export default App;
+
