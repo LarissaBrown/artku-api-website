@@ -8,14 +8,14 @@ function HaikuForm (props) {
     const {setTitle, title, poet, lineOne, lineTwo, lineThree, setLineOne, setLineTwo, setLineThree, setPoet, handleSubmit, handleHaiku} = useContext(ContextStore) 
         return (
             <div>
-                 <form onSubmit={(e)=> handleSubmit(e.target.value, setTitle , setPoet, setLineOne, setLineTwo, setLineThree)}>
+                 <form onSubmit={handleSubmit}>
                     <a href="https://poets.org/glossary/haiku">What is a Haiku</a>
                         <br></br>
                     <a href="https://www.howmanysyllables.com/howtocountsyllables">Syllable Rules: How to Count Syllables</a>
                         <hr></hr> 
                     <SyllableCounter />
                         <hr></hr>
-                    <input name="title"onChange={handleHaiku} placeholder="Haiku Title"></input>
+                    <input name="title"onChange={handleHaiku} value={title} placeholder="Haiku Title"></input>
                         <br></br>
                     <input name="poet" onChange={handleHaiku} value={poet} placeholder="Poet's Name"></input>
                         <br></br>

@@ -95,23 +95,33 @@ function ContextStoreProvider (props) {
     function handleHaiku(event){
 
         const {value} = event.target.value
-
+        
         setTitle(value)
         setPoet(value)
         setLineOne(value)
         setLineTwo(value)
-        setLineThree(value)
-       
+        setLineThree(value) 
         
 
     }
-   
+    function handleSubmit(event){
+        event.preventDefault()
+       
+    }
+
+    function handleClear(event){
+        event.preventDefault()
+        setSyllableCounterWord("")
+        setCount1("")
+    }
     
     return (
         <ContextStore.Provider
             value = {{
                 handleHaiku,
                 handleChange,
+                handleSubmit,
+                handleClear,
                 setSyllableCounterWord,
                 syllableCounterWord,
                 delayedApiWord,

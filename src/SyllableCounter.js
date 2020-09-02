@@ -5,9 +5,11 @@ import {ContextStore} from "./ContextStore"
 
 export default function SyllableCounter(){
 
-    const { setSyllableCounterWord, count1,  syllableCounterWord, handleChange, setCount1,  } = useContext(ContextStore) 
+    const { setSyllableCounterWord, count1,  syllableCounterWord, handleClear, handleChange, setCount1,  } = useContext(ContextStore) 
     return (
         <div >
+            <form onSubmit={handleClear}>
+            <button type="submit">clear</button>
             <input  name="syllableCounterWord" 
                 value={syllableCounterWord}
                 onChange={(e)=>handleChange(e.target.value, setSyllableCounterWord)} 
@@ -18,7 +20,7 @@ export default function SyllableCounter(){
                 onChange={(e)=> handleChange(e.target.value, setCount1)} 
                 placeholder="count of five syllables">{count1 === ""? "number of" : count1} syllables
             </p>  
-           
+            </form>
         </div>
 
     )
