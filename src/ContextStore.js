@@ -14,7 +14,7 @@ function ContextStoreProvider (props) {
     const [lineThree, setLineThree] = useState("");
     const [poet, setPoet] = useState("");
     const [photo, setPhoto] = useState("https://images.unsplash.com/photo-1578321926534-133bb2a9f080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-    const [word] = useState("");
+    const [word] = useState("word");
     const [wordSyll] = useState("");
     const [inputWord, setInputWord] = useState("");
     const [count1, setCount1] = useState("");
@@ -63,8 +63,8 @@ function ContextStoreProvider (props) {
         }
      }
     
-     
-    const delayedApiWord = useCallback(_.debounce(word => sendWordToApi(word), 1000), [])
+   // eslint-disable-next-line   
+    const delayedApiWord = useCallback(_.debounce((word)=>{ sendWordToApi(word) }, 1000), [])
 
     function sendWordToApi(word) {
        

@@ -5,7 +5,7 @@ import Haiku from "./Haiku"
 
 
 function HaikuForm (props) {
-    const {title, poet, lineOne, lineTwo, lineThree, handleSubmit, handleHaiku} 
+    const {title, poet, lineOne, lineTwo, lineThree, handleSubmit, handleHaiku} = useContext(ContextStore)
         return (
             <div>
                  <form onSubmit={handleSubmit}>
