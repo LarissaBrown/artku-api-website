@@ -6,11 +6,11 @@ import {ContextStore} from "./ContextStore"
 
 function  Haiku (props) {
     
-    const {title,  poet, lineOne, lineTwo, lineThree, } = props
+    const {title,  poet, lineOne, lineTwo, lineThree, } = useContext(ContextStore) 
    
         return (
           
-            <div>
+            <div className="haikuText">
                
                 <h3 name="title" >{title}</h3>
                 <h4>{poet}</h4>

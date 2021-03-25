@@ -5,7 +5,7 @@ import Haiku from "./Haiku"
 
 
 function HaikuForm (props) {
-    const {setTitle, title, poet, lineOne, lineTwo, lineThree, setLineOne, setLineTwo, setLineThree, setPoet, handleSubmit, handleHaiku} = useContext(ContextStore) 
+    const {title, poet, lineOne, lineTwo, lineThree, handleSubmit, handleHaiku} 
         return (
             <div>
                  <form onSubmit={handleSubmit}>
@@ -21,13 +21,13 @@ function HaikuForm (props) {
                         <br></br>
                     <input onChange={handleHaiku} value={lineOne} style={{width: "300px"}}name="lineOne" placeholder="Type in a line of words with a total of 5 syllables"></input>
                         <br></br>
-                    <input onChange={handleHaiku} value={lineTwo}style={{width: "300px"}}name="lineTwo" placeholder="Type in a line of words with a total of 7 syllables"></input>
+                    <input onChange={handleHaiku} value={lineTwo} style={{width: "300px"}}name="lineTwo" placeholder="Type in a line of words with a total of 7 syllables"></input>
                         <br></br>
                     <input onChange={handleHaiku} value={lineThree} style={{width: "300px"}}name="lineThree" placeholder="Type in a line of words with a total of 5 syllables"></input>
                         <br></br>
                     <button className="button">submit</button>
                 </form>
-                <Haiku title={title} poet={poet} lineOne={lineOne} lineTwo={lineTwo} lineThree={lineThree}/>
+                <Haiku />
             </div>
         );
     
