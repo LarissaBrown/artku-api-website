@@ -107,6 +107,12 @@ function ContextStoreProvider (props) {
     }
     function handleSubmit(event){
         event.preventDefault()
+           
+        setTitle('')
+        setPoet('')
+        setLineOne('')
+        setLineTwo('')
+        setLineThree('') 
        
        
     }
