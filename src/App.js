@@ -6,6 +6,7 @@ import Haiku from"./Haiku";
 import Artwork from "./Artwork";
 import 'fontsource-roboto'; 
 import "./Style.css";
+import { Route } from 'react-router-dom'
 
 
 
@@ -18,7 +19,10 @@ function App() {
   return (
     
     <div className="App">
-        <Navbar />
+        <Route exact path='/'>
+        <App/>
+        </Route>
+        <Navbar/>
         <header >Artku Random Haiku</header>
         <div></div>
         <div></div>

@@ -27,7 +27,7 @@ function HaikuForm (props) {
                         <br></br>
                     <button className="button">submit</button>
                 </form>
-                <Haiku />
+                <Haiku title={title} poet={poet} lineOne={lineOne} lineTwo={lineTwo} lineThree={lineThree}/>
             </div>
         );
     
