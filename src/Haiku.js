@@ -1,22 +1,22 @@
-import React,{useContext} from 'react';
-import {ContextStore} from "./ContextStore"
+import React from 'react';
+
 
 
 
 
 function  Haiku (props) {
     
-    const { inputs } = useContext(ContextStore) 
+    const { title,  poet, lineOne, lineTwo, lineThree, } = props
    
         return (
           
             <div className="haikuText">
                
-                <h3 name="title" >{inputs.title}</h3>
-                <h4>{inputs.poet}</h4>
-                <p>{inputs.lineOne}</p>
-                <p>{inputs.lineTwo}</p>
-                <p>{inputs.lineThree}</p>
+                <h3 name="title" >{title}</h3>
+                <h4>{poet}</h4>
+                <p>{lineOne}</p>
+                <p>{lineTwo}</p>
+                <p>{lineThree}</p>
                 
             </div>
            

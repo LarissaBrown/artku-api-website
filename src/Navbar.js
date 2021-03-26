@@ -1,7 +1,8 @@
 import React from 'react';
-//import {Router, Link, Switch } from 'react-router'
+import { useLocation, useParams, useHistory, useRouteMatch} from "react-router-dom"
 
 function Navbar(props) {
+    console.log(props)
     
         return (
             <div >
@@ -10,6 +11,8 @@ function Navbar(props) {
                     <li>Home</li>
                     <li>Gallery</li>
                     <li>About</li>
+                    <li>Art Index</li> 
+                    
                 </ul>
             </div>
         );

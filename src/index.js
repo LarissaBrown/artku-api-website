@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import {ContextStoreProvider} from "./ContextStore"
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 
@@ -12,7 +13,9 @@ import {ContextStoreProvider} from "./ContextStore"
 ReactDOM.render(
   
     <ContextStoreProvider >
-      <App />
+        <Router>
+          <App />
+        </Router>
     </ContextStoreProvider >,
   
   document.getElementById('root')

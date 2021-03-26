@@ -1,27 +1,30 @@
 import React from 'react';
-import Navbar from "./Navbar";
-import ArtIndex from "./ArtIndex";
-import HaikuForm from "./HaikuForm";
-import Haiku from './Haiku';
-import Artwork from "./Artwork";
-import 'fontsource-roboto'; 
-import "./Style.css";
+import { Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import Gallery from './Gallery'
+import About from './About'
+import ArtIndex from './ArtIndex'
+
 
 function App() {
   
   return (
     
-    <div className="App">
-        <Navbar/>
-        <header >Artku Random Haiku</header>
-        <div></div>
-        <div></div>
-        <Artwork />
-        <div></div>
-        <div></div>
-        <HaikuForm />
-        <ArtIndex />
-        <Haiku />
+    <div>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/gallery'>
+          <Gallery />
+        </Route>
+        <Route exact path='/about'>
+          <About />
+        </Route>
+        <Route exact path='/art-index'>
+          <ArtIndex/>
+        </Route>
+      </Switch>
     </div>
  
    
