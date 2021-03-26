@@ -14,16 +14,27 @@ function ContextStoreProvider (props) {
     const [lineThree, setLineThree] = useState("");
     const [poet, setPoet] = useState("");
     const [photo, setPhoto] = useState("https://images.unsplash.com/photo-1578321926534-133bb2a9f080?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
-    const [word] = useState("word");
+    const [word] = useState("");
     const [wordSyll] = useState("");
     const [inputWord, setInputWord] = useState("");
     const [count1, setCount1] = useState("");
     const [objectId, setObjectId] = useState(''); 
     const [artTitle, setArtTitle] = useState("No Title");
     const [artist, setArtist] = useState("Unknown Artist");
-    const [syllableCounterWord, setSyllableCounterWord] = useState("")    
-   
+    const [syllableCounterWord, setSyllableCounterWord] = useState("")  
+    const [gallery] = useState([]) 
+  
+   const initInputs = {
+       title: title || '',
+       poet: poet || '',
+       lineOne: lineOne || '',
+       lineTwo: lineTwo || '', 
+       lineThree: lineThree || '',
+       artist: artist || '',
+       photo: photo || ''
 
+   }
+   const [inputs, setInputs] = useState(initInputs) 
 
 
 
@@ -63,8 +74,8 @@ function ContextStoreProvider (props) {
         }
      }
     
-   // eslint-disable-next-line   
-    const delayedApiWord = useCallback(_.debounce((word)=>{ sendWordToApi(word) }, 1000), [])
+    // eslint-disable-next-line
+    const delayedApiWord = useCallback(()=> _.debounce((word)=>{ sendWordToApi(word) }, 1000),[])
 
     function sendWordToApi(word) {
        
@@ -95,14 +106,11 @@ function ContextStoreProvider (props) {
     //onChange function 
     function handleHaiku(event){
 
-        const {value} = event.target.value
+        const { name, value } = event.target.value
         
-        setTitle(value)
-        setPoet(value)
-        setLineOne(value)
-        setLineTwo(value)
-        setLineThree(value) 
-        
+     setInputs(prevInputs => ({...prevInputs, [name]: value}))
+
+        gallery.push({inputs})
 
     }
     function handleSubmit(event){
@@ -142,7 +150,7 @@ function ContextStoreProvider (props) {
                 artTitle,
                 wordSyll,  
                 setNewPhoto,
-                //gallery, 
+                gallery, 
                 title,
                 setTitle, 
                 lineOne, 
@@ -152,6 +160,7 @@ function ContextStoreProvider (props) {
                 poet,
                 setPoet, 
                 word, 
+                inputs,
                 inputWord, 
                 setInputWord}}>
                 {props.children}

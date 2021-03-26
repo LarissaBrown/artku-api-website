@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 //import {Router, Link, Switch } from 'react-router'
 
-class Navbar extends Component {
-    render() {
+function Navbar(props) {
+    
         return (
             <div >
                 <ul className="navbar">
@@ -13,7 +13,7 @@ class Navbar extends Component {
                 </ul>
             </div>
         );
-    }
+    
 }
 
 export default Navbar;

@@ -52,5 +52,6 @@
   "bugs": {
     "url": "https://github.com/LarissaBrown/artku-api-website/issues"
   },
-  "homepage": "https://github.com/LarissaBrown/artku-api-website#readme"
+  "homepage": "https://github.com/LarissaBrown/artku-api-website#readme",
+  "devDependencies": {}
 }

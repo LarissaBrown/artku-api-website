@@ -47,5 +47,9 @@ li {
   display: block;
 }
 .haikuText {
-  
+  text-align: center;
+  font-family: roboto;
+  font-size: 24
+
+
 }
